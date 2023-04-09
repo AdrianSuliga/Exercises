@@ -96,5 +96,60 @@ string dane_to_bin(string dane)
 }
 string bin_to_dane(string dane)
 {
-	return "";
+	string answer = "", year = "", month = "", day = "";
+	int y = 0, m = 0, d = 0, licznik = 0;
+
+	for (int i = 0; i < 7; i++)
+		year += dane[i];
+	for (int i = 7; i < 11; i++)
+		month += dane[i];
+	for (int i = 11; i < 16; i++)
+		day += dane[i];
+
+	licznik = 1;
+	for (int i = year.length() - 1; i >= 0; i--)
+	{
+		if (year[i] == '1')
+			y += licznik;
+		licznik *= 2;
+	}
+	y += 1980;
+
+	licznik = 1;
+	for (int i = month.length() - 1; i >= 0; i--)
+	{
+		if (month[i] == '1')
+			m += licznik;
+		licznik *= 2;
+	}
+
+	licznik = 1;
+	for (int i = day.length() - 1; i >= 0; i--)
+	{
+		if (day[i] == '1')
+			d += licznik;
+		licznik *= 2;
+	}
+
+	year = "";
+	month = "";
+	day = "";
+
+	string finalm = "", finald = "";
+
+	year += to_string(y);
+	month += to_string(m);
+	day += to_string(d);
+
+	if (month.length() < 2)
+		finalm = finalm + "-" + "0" + month;
+	else
+		finalm = finalm + "-" + month;
+	if (day.length() < 2)
+		finald = finald + "-" + "0" + day;
+	else
+		finald = finald + "-" + day;
+
+	answer += year + finalm + finald;
+	return answer;
 }
