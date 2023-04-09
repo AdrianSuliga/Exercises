@@ -12,4 +12,7 @@ In this exercise there are two types of inputs to handle:
 3) The binary sequence that we consider can only store dates between 1980 and 2107, there are only 12 months in a year and each month may have 31, 30 or 29 days. If someone inputs incorrect date, the programm should return an ERROR.
 
 Current progress: 
+
 Code meets requirement 1). I am working on 2) and 3).
+
+Update: Requirement 1) and 2) has been met. There is a lot of work to be done with 3), though.
