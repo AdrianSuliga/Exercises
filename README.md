@@ -15,4 +15,6 @@ Current progress:
 
 Code meets requirement 1). I am working on 2) and 3).
 
-Update: Requirement 1) and 2) has been met. There is a lot of work to be done with 3), though.
+Update: Requirements 1) and 2) have been met. There is a lot of work to be done with 3), though.
+
+Update: Every requirement was met, SPOJ accepted this solution. The job is done. The hardest part was to validate whether considered month and day were correct or not.
