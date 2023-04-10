@@ -10,22 +10,15 @@ bool correct_date(int year, int month, int day);
 int main()
 {
 	string dane = "";
-	bool date_to_bin = false;
 	cin >> dane;
 
-	for (int i = 0; i < dane.length(); i++)
-	{
-		if (dane[i] == '-')
-		{
-			date_to_bin = true;
-			break;
-		}
-	}
-	if (date_to_bin == true)
+	if (dane.length() == 10)
 		cout << dane_to_bin(dane) << endl;
-	if (date_to_bin == false)
+	else if (dane.length() == 16)
 		cout << bin_to_dane(dane) << endl;
-
+	else
+		cout << "ERROR" << endl;
+	
 	return 0;
 }
 string dane_to_bin(string dane)
@@ -33,9 +26,6 @@ string dane_to_bin(string dane)
 	string answer = "", year = "", month = "", day = "";
 	int licznik = 0, y = 0, m = 0, d = 0;
 	bool flag = true;
-
-	if (dane.length() != 10)
-		return "ERROR";
 
 	for (int i = 0; i < 4; i++)
 		year += dane[i];
@@ -100,9 +90,6 @@ string bin_to_dane(string dane)
 	int y = 0, m = 0, d = 0, licznik = 0;
 	bool flag = true;
 
-	if (dane.length() != 16)
-		return "ERROR";
-
 	for (int i = 0; i < 7; i++)
 		year += dane[i];
 	for (int i = 7; i < 11; i++)
@@ -164,8 +151,7 @@ string bin_to_dane(string dane)
 }
 bool correct_date(int year, int month, int day)
 {
-	cout << year << " " << month << " " << day << endl;
-
+	bool przestepny = true;
 	if (year < 1980 || year > 2107)
 		return false;
 
@@ -181,10 +167,16 @@ bool correct_date(int year, int month, int day)
 
 	if (month == 2)
 	{
-		if (((year % 4 == 0 && year % 100 != 0) || year % 400 == 0) && (day < 1 || day > 29))
+		if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0)
+			przestepny = true;
+		else
+			przestepny = false;
+
+		if ((przestepny == true) && (day < 1 || day > 29))
 			return false;
-		else if (day < 1 || day > 28)
+		if ((przestepny == false) && (day < 1 || day > 28))
 			return false;
 	}
+
 	return true;
 }
