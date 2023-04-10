@@ -18,3 +18,5 @@ Code meets requirement 1). I am working on 2) and 3).
 Update: Requirements 1) and 2) have been met. There is a lot of work to be done with 3), though.
 
 Update: Every requirement was met, SPOJ accepted this solution. The job is done. The hardest part was to validate whether considered month and day were correct or not.
+
+If you want to download my solution, clik [here](https://github.com/AdrianSuliga/SPOJ_exercise_2_date_to_binary/releases/tag/Final)
