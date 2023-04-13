@@ -19,4 +19,3 @@ Update: Requirements 1) and 2) have been met. There is a lot of work to be done 
 
 Update: Every requirement was met, SPOJ accepted this solution. The job is done. I received 90/100 points for this exercise.
 
-If you want to download my solution, clik [here](https://github.com/AdrianSuliga/SPOJ_exercise_2_date_to_binary/releases/tag/Final2)
