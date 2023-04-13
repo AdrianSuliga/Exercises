@@ -24,5 +24,3 @@ We change the table [n1, n2, ..., nk] into a table [2 * n1, 2 * n2, ..., 2 * nk]
 Now we want to substract those numbers from the array [a1, a2, ..., ak] from a sum S so that we get as close to 0 as possible. We do not have to use all of the numbers.
 In my solution I used dynamic programming - I created a recursive function and put an unordered_map into it in order to memoize it
 
-Download the newest solution [HERE](https://github.com/AdrianSuliga/SPOJ_exercise_1_speed_test/releases/tag/Third)
-
