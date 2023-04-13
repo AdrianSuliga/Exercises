@@ -30,7 +30,7 @@ int main()
 	d[0] = 0;
 	p[0] = -1;
 
-	for (int i = 1; i < h; i++)				//INICJOWANIE TABLIC KOSZTÓW DOJŚCIA I POPRZEDNICH WIERZCHOŁKÓW
+	for (int i = 1; i < h; i++)				
 	{
 		d[i] = INF;
 		p[i] = -1;
@@ -38,7 +38,7 @@ int main()
 
 	distances[0] = 0;
 	costs[0] = 0;
-	for (int i = 1; i < h; i++)				//WPROWADZENIE ODL I CEN
+	for (int i = 1; i < h; i++)				
 	{
 		cin >> distances[i] >> costs[i];
 	}
