@@ -24,24 +24,24 @@ int main()
 		}
 		arrayA -= sizeA;
 
-		for (int i = 1; i < sizeA; i++)								//Calculating bitwsie of all known numbers Ai
-		{															//final bitwise of known numbers is saved in array[sizeA-1] 
+		for (int i = 1; i < sizeA; i++)							//Calculating bitwsie of all known numbers Ai
+		{										//final bitwise of known numbers is saved in array[sizeA-1] 
 			arrayA[i] = XOR(arrayA[i - 1], arrayA[i]);
 		}
 
-		cout << minimum_X(arrayA[sizeA - 1], final_bitwise) << '\n';	//function minimum_X finds minimum X for which 
-	}																	//array[sizeA - 1] OR X == final_bitwise
+		cout << minimum_X(arrayA[sizeA - 1], final_bitwise) << '\n';			//function minimum_X finds minimum X for which 
+	}											//array[sizeA - 1] OR X == final_bitwise
 
 	return 0;
 }
 int XOR(int a, int b)
 {
-	int Amax = 524288, bitwise = 0;					//Amax results from exrcise's constraints
+	int Amax = 524288, bitwise = 0;								//Amax results from exrcise's constraints
 	string bitA = "00000000000000000000", bitB = "00000000000000000000";
 	string ans = "00000000000000000000";
-													//strings have 20 chars, because Amax = 2^19, therefore maximum number of chars
-													//needed to write numbers from arrayA in binary is 20.
-	for (int i = 0; i < 20; i++)					//Converting a and b into binary and saving it into bitA and bitB variables
+										//strings have 20 chars, because Amax = 2^19, therefore maximum number of chars
+										//needed to write numbers from arrayA in binary is 20.
+	for (int i = 0; i < 20; i++)						//Converting a and b into binary and saving it into bitA and bitB variables
 	{
 		if (a / Amax == 1)
 		{
@@ -75,7 +75,7 @@ int XOR(int a, int b)
 		Amax /= 2;
 	}
 
-	return bitwise;									//returning final bitwise
+	return bitwise;							//returning final bitwise
 }
 int minimum_X(int S, int final_bitwise)
 {
@@ -103,11 +103,11 @@ int minimum_X(int S, int final_bitwise)
 	for (int i = 0; i < 20; i++)					//Now, the most important part: S OR X == final_bitwise
 	{
 		if (bitS[i] == '1' && bitFinal_bitwise[i] == '1')	//1 OR X == 1, so X == 1 or X == 0 
-			ans[i] = '0';									//X == 0 guarantees smaller number in the end
+			ans[i] = '0';					//X == 0 guarantees smaller number in the end
 		if (bitS[i] == '0' && bitFinal_bitwise[i] == '0')	//0 OR X == 0, so X == 0
 			ans[i] = '0';
 		if (bitS[i] == '1' && bitFinal_bitwise[i] == '0')	//In this case it is impossible to put anything into X, 
-			return -1;										//because 1 OR X != 0
+			return -1;					//because 1 OR X != 0
 		if (bitS[i] == '0' && bitFinal_bitwise[i] == '1')	//0 OR X == 1, so X == 1
 			ans[i] = '1';
 	}
