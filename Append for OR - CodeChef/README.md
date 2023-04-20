@@ -1,4 +1,4 @@
-#Append for OR - CodeChef exercise
+# Append for OR - CodeChef exercise
 
 In this exercise you need to learn about bitwise operation OR. You are given numbers N, Y and an array of int numbers [ a1, a2, ..., aN ]. You have to find number X
 such that:
