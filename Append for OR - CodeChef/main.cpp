@@ -24,25 +24,26 @@ int main()
 		}
 		arrayA -= sizeA;
 
-		for (int i = 1; i < sizeA; i++)							//Calculating bitwsie of all known numbers Ai
-		{										//final bitwise of known numbers is saved in array[sizeA-1] 
+		for (int i = 1; i < sizeA; i++)					//Calculating bitwsie of all known numbers Ai
+		{								//final bitwise of known numbers is saved in array[sizeA-1] 
 			arrayA[i] = XOR(arrayA[i - 1], arrayA[i]);
 		}
 
-		cout << minimum_X(arrayA[sizeA - 1], final_bitwise) << '\n';			//function minimum_X finds minimum X for which 
-	}											//array[sizeA - 1] OR X == final_bitwise
+		cout << minimum_X(arrayA[sizeA - 1], final_bitwise) << '\n';	//function minimum_X finds minimum X for which 
+	}									//array[sizeA - 1] OR X == final_bitwise
 
 	return 0;
 }
 int XOR(int a, int b)
 {
-	int Amax = 524288, bitwise = 0;								//Amax results from exrcise's constraints
+	int Amax = 524288, bitwise = 0;						//Amax results from exrcise's constraints
 	string bitA = "00000000000000000000", bitB = "00000000000000000000";
 	string ans = "00000000000000000000";
-										//strings have 20 chars, because Amax = 2^19, therefore maximum number of chars
+										//strings have 20 chars, because Amax = 2^19, 
+										//therefore maximum number of chars
 										//needed to write numbers from arrayA in binary is 20.
-	for (int i = 0; i < 20; i++)						//Converting a and b into binary and saving it into bitA and bitB variables
-	{
+	for (int i = 0; i < 20; i++)						//Converting a and b into binary and saving it 
+	{									//into bitA and bitB variables
 		if (a / Amax == 1)
 		{
 			a -= Amax;
@@ -83,8 +84,8 @@ int minimum_X(int S, int final_bitwise)
 	string bitS = "00000000000000000000", bitFinal_bitwise = "00000000000000000000";
 	string ans = "00000000000000000000";
 	
-	for (int i = 0; i < 20; i++)					//Converting S and final_bitwise into binary in bitS and bitFinal_bitwise variables
-	{
+	for (int i = 0; i < 20; i++)					//Converting S and final_bitwise into binary 
+	{								//in bitS and bitFinal_bitwise variables
 		if (S / Amax == 1)
 		{
 			S -= Amax;
